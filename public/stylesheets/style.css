@@ -1,0 +1,18 @@
+a {
+  font-size: 1.5em; }
+  a:hover {
+    color: red; }
+
+.navigation {
+  background: black; }
+
+.logout {
+  height: 6vh; }
+
+body {
+  background: black; }
+
+img {
+  width: 100vw; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="timApp">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <title>Tim Novak Official</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.js"></script>
+    <script src="javascripts/app.js"></script>
+    <script type="text/javascript" src="javascripts/jwt-decode.js"></script>
+    <script src="javascripts/services/services.js"></script>
+    <script src="javascripts/controllers/controllers.js"></script>
+</head>
+<body ng-controller="timController">
+    <div class="text-right">
+      <header class="navigation">
+          <a ng-href="#/discography">Discography</a>
+          <a ng-href="#/videos">Videos</a>
+          <a ng-href="#/writing">Writing</a>
+          <button ng-click="view.logout()" ng-show="user" class="logout">Log Out</button>
+      </header>
+    </div>
+  <main ng-view></main>
+</body>
+</html>

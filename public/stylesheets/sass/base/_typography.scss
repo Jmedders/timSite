@@ -1,0 +1,20 @@
+a {
+  font-size: 1.5em;
+  &:hover {
+    color: red;
+  }
+}
+.navigation {
+  background: black;
+}
+.logout{
+  height: 6vh;
+}
+
+body {
+  background: black;
+}
+
+img{
+  width: 100vw;
+}
