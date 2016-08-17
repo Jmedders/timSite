@@ -15,4 +15,12 @@ body {
 img {
   width: 100vw; }
 
+.boxcontainer {
+  height: 25vh;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  color: white;
+  font: 1.5em Helvetica; }
+
 /*# sourceMappingURL=style.css.map */
