@@ -23,3 +23,8 @@ function($scope, TimeService, $location, $http, $window, $route) {
   }
 
 }]);
+
+app.controller('secondaryController', ['$scope', '$http',
+function($scope, $http){
+  $scope.fiction = 'Short stories'
+}]);
