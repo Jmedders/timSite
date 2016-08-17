@@ -4,13 +4,13 @@ a {
     color: red; }
 
 .navigation {
-  background: black; }
+  background: lightgray; }
 
 .logout {
   height: 6vh; }
 
 body {
-  background: black; }
+  background: darkgray; }
 
 img {
   width: 100vw; }
