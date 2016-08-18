@@ -19,13 +19,25 @@ function($scope, TimeService, $location, $http, $window, $route) {
   }
 
   $scope.view.showAdultColour = function(){
-    $scope.view.adultColour = true;
+    if($scope.view.adultColour){
+      $scope.view.adultColour = false;
+    } else{
+      $scope.view.adultColour = true;
+    }
   }
   $scope.view.showRidgelings = function(){
-    $scope.view.ridgelings = true;
+    if($scope.view.ridgelings){
+      $scope.view.ridgelings = false;
+    } else{
+      $scope.view.ridgelings = true;
+    }
   }
   $scope.view.showSolo = function(){
-    $scope.view.solo = true;
+    if($scope.view.solo){
+      $scope.view.solo = false;
+    } else{
+      $scope.view.solo = true;
+    }
   }
   $scope.view.logout = function() {
     localStorage.clear();
