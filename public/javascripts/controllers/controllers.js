@@ -2,7 +2,9 @@ app.controller('timController', ['$scope', 'TimeService', '$location', '$http', 
 function($scope, TimeService, $location, $http, $window, $route) {
   $scope.view = {};
   $scope.view.name = "Jeff";
-
+  $scope.view.adultColour = false;
+  $scope.view.ridgelings = false;
+  $scope.view.solo = false;
   $scope.view.logIn = function() {
     TimeService.logIn($scope.view.username, $scope.view.password).then(function (res) {
       if(res.data.errors){
@@ -16,6 +18,15 @@ function($scope, TimeService, $location, $http, $window, $route) {
     });
   }
 
+  $scope.view.showAdultColour = function(){
+    $scope.view.adultColour = true;
+  }
+  $scope.view.showRidgelings = function(){
+    $scope.view.ridgelings = true;
+  }
+  $scope.view.showSolo = function(){
+    $scope.view.solo = true;
+  }
   $scope.view.logout = function() {
     localStorage.clear();
     $location.path('/');
