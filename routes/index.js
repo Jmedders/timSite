@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/login', function(req, res, next){
-  console.log('posting');
+  console.log(req.body);
   knex('users')
   .where({
     username: req.body.username
@@ -25,7 +25,7 @@ router.post('/login', function(req, res, next){
     if(!data){
       res.json({errors: 'username or password is incorrect'})
     } else if(bcrypt.compareSync(req.body.password, data.password)){
-      token = jwt.sign({id: data.id, username: data.username, is_admin: data.is_admin}, process.env.SECRET);
+      token = jwt.sign({id: data.id, usernautme: data.username, is_admin: data.is_admin}, process.env.SECRET);
       res.json({token:token});
       console.log("token is: ", token);
     } else {
