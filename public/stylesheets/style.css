@@ -15,9 +15,7 @@ a {
   height: 6vh; }
 
 body {
-  background: darkgray;
-  padding: 0;
-  margin: 0; }
+  background: darkgray; }
 
 img {
   width: 100vw; }
@@ -43,5 +41,10 @@ img {
 
 #timPic {
   height: 70vh; }
+
+.addpads {
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: justify; }
 
 /*# sourceMappingURL=style.css.map */
