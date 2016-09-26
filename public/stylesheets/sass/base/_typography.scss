@@ -5,7 +5,12 @@ a {
   }
 }
 .navigation {
-  background: lightgray;
+  float: right;
+  width: 50vw;
+  padding: 20px;
+  font-size: 1.4em;
+  text-align: right;
+  display: inline-block;
 }
 .logout{
   height: 6vh;
@@ -13,6 +18,8 @@ a {
 
 body {
   background: darkgray;
+  padding: 0;
+  margin: 0;
 }
 
 img{
@@ -31,4 +38,15 @@ img{
 #ridgelingsPic {
   height: 50vh;
   width: 70vh;
+}
+
+#tim{
+  display: inline-block;
+  float: left;
+  font-family: 'Cardo';
+  margin-top: 0;
+  padding-top: 0;
+}
+#timPic{
+  height: 70vh;
 }
