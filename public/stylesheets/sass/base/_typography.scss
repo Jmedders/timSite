@@ -10,12 +10,15 @@ a {
   padding: 20px;
   font-size: 1.4em;
   text-align: right;
-  display: inline-block;
 }
 .logout{
   height: 6vh;
 }
+#border {
+  border-top: 3px groove gray;
+  clear: both;
 
+}
 body {
   background: darkgray;
 }
@@ -39,7 +42,6 @@ img{
 }
 
 #tim{
-  display: inline-block;
   float: left;
   font-family: 'Cardo';
   margin-top: 0;

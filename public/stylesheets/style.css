@@ -8,11 +8,14 @@ a {
   width: 50vw;
   padding: 20px;
   font-size: 1.4em;
-  text-align: right;
-  display: inline-block; }
+  text-align: right; }
 
 .logout {
   height: 6vh; }
+
+#border {
+  border-top: 3px groove gray;
+  clear: both; }
 
 body {
   background: darkgray; }
@@ -33,7 +36,6 @@ img {
   width: 70vh; }
 
 #tim {
-  display: inline-block;
   float: left;
   font-family: 'Cardo';
   margin-top: 0;

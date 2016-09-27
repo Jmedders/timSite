@@ -16,7 +16,7 @@
 <body ng-controller="timController">
     <div id="headings">
       <header id="tim">
-        <h1>Tim Novak</h1>
+        <h1 class="addpads">Tim Novak</h1>
       </header>
       <header class="navigation">
         <a ng-href="#/discography">Discography</a>
@@ -25,6 +25,7 @@
         <button ng-click="view.logout()" ng-show="user" class="logout">Log Out</button>
       </header>
     </div>
-  <main ng-view></main>
+    <div id="border"></div>
+  <main id="main" ng-view></main>
 </body>
 </html>
