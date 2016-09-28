@@ -6,6 +6,13 @@ app.factory('TimeService', function($http, $location){
       user.password = password;
       console.log(user);
       return $http.post('/login', user)
+    },
+    submitblog: function(text, date){
+      var blog = {};
+      blog.text = text;
+      blog.date = date;
+      console.log(blog);
+      return $http.post('/blogging', blog)
     }
   }
 });

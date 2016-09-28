@@ -45,6 +45,18 @@ function($scope, TimeService, $location, $http, $window, $route) {
     $window.location.reload();
   }
 
+  $scope.view.submitPost = function(){
+    $scope.view.date = new Date();
+    TimeService.submitblog($scope.view.text, $scope.view.date).then(function(res){
+      if(res.data.errors){
+        $scope.view.error = res.data.errors
+      } else {
+        $location.path('/writing');
+        $window.location.reload();
+      }
+    })
+  }
+
 }]);
 
 app.controller('secondaryController', ['$scope', '$http',

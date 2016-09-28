@@ -49,8 +49,12 @@ img {
   padding-right: 15px;
   text-align: justify; }
 
-#blogarea {
-  height: 80vh;
-  width: 50vw; }
+#blogpreview {
+  width: 55vw;
+  float: right; }
+
+#blogdiv {
+  width: 40vw;
+  float: left; }
 
 /*# sourceMappingURL=style.css.map */

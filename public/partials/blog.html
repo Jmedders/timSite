@@ -1,9 +1,15 @@
-<div class="addpads" id ="loginDiv">
+<div class="addpads" id ="blogdiv">
   <form class="addpads" ng-submit="view.submitPost()" name="submitText">
     <h1>Submit A Blog Post</h1>
-    <input id="blogarea" type="textarea" name="text" ng-model="view.text" required>
+    <!-- <input id="blogarea" type="textarea" name="text" ng-model="view.text" required> -->
+    <textarea name="paragraph_text" ng-model="view.text" cols="50" rows="10"></textarea>
     <br>
     <input type="submit" id="logInSubmit">
     <h5 class="logInError">{{view.error}}</h5>
   </form>
+</div>
+<div id="blogpreview">
+  <br>
+  <!-- <h3>{{view.date | date}}</h3> -->
+  <h3>{{view.text}}</h3>
 </div>

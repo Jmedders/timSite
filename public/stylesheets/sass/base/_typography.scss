@@ -58,7 +58,11 @@ img{
   text-align: justify;
 }
 
-#blogarea {
-  height: 80vh;
-  width: 50vw;
+#blogpreview {
+  width: 55vw;
+  float: right;
+}
+#blogdiv {
+  width: 40vw;
+  float: left;
 }

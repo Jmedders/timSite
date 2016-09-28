@@ -14,6 +14,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.post('/blogging', function(req,res,next){
+  console.log(req.body);
+})
 router.post('/login', function(req, res, next){
   console.log(req.body);
   knex('users')
