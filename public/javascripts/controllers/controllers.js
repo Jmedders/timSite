@@ -50,8 +50,7 @@ function($scope, TimeService, $location, $http, $window, $route) {
     TimeService.submitblog($scope.view.text, $scope.view.date).then(function(res){
       if(res.data.errors){
         $scope.view.error = res.data.errors
-      } else {
-        console.log(res.data.data);
+      } else {        
         $location.path('/writing');
         $window.location.reload();
       }

@@ -23,10 +23,11 @@ router.post('/blogging', function(req,res,next){
     post: req.body.text
   }).then(function(data){
     res.json({data: 'submitted'})
+  }).catch(function(err){
+    res.json({errors: 'that was strange, try again'})
   })
 })
 router.post('/login', function(req, res, next){
-  console.log(req.body);
   knex('users')
   .where({
     username: req.body.username
@@ -38,7 +39,6 @@ router.post('/login', function(req, res, next){
     } else if(bcrypt.compareSync(req.body.password, data.password)){
       token = jwt.sign({id: data.id, usernautme: data.username, is_admin: data.is_admin}, process.env.SECRET);
       res.json({token:token});
-      console.log("token is: ", token);
     } else {
       res.json({errors: 'username or password is incorrect'})
     }

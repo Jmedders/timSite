@@ -11,7 +11,6 @@ app.factory('TimeService', function($http, $location){
       var blog = {};
       blog.text = text;
       blog.date = date;
-      console.log(blog);
       return $http.post('/blogging', blog)
     }
   }
