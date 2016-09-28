@@ -24,12 +24,23 @@ router.get('/grabvideos', function(req,res,next){
   var videourl = "https://www.youtube.com/embed/"
   knex('videos').orderBy('id', 'desc').then(function(data){
     for (var i = 0; i < data.length; i++) {
+      var vidobj = {};
       var fullurl = videourl + data[i].videoSuffix;
-      videoArr.push(fullurl);
+      vidobj.id = data[i].id;
+      vidobj.fullurl = fullurl
+      videoArr.push(vidobj);
     }
     res.json(videoArr);
   })
 })
+
+router.post('/deletevideos', function(req,res,next){
+  console.log(req.body.id, 'about to disappear');
+  knex('videos').where('id', req.body.id).delete().then(function(data){
+    res.json({data: data});
+  })
+})
+
 router.post('/addvideo', function(req,res,next){
   if(typeof req.body.fullurl == 'undefined'){
     res.json({errors: 'must submit suffix for url'})

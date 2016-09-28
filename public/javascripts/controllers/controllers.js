@@ -70,8 +70,8 @@ function($scope, TimeService, $location, $http, $window, $route) {
 
 }]);
 
-app.controller('secondaryController', ['$scope', 'secondaryService', '$location', '$http',
-function($scope, secondaryService, $location, $http){
+app.controller('secondaryController', ['$scope', 'secondaryService', '$location', '$http', '$window',
+function($scope, secondaryService, $location, $http, $window){
   $scope.view = {};
   $scope.fiction = 'Short stories';
   if($location.path() == '/writing'){
@@ -82,6 +82,11 @@ function($scope, secondaryService, $location, $http){
   if($location.path() == '/videos'){
     secondaryService.getvideos().then(function (res) {
       $scope.view.videourls = res.data;
+    })
+  }
+  $scope.view.deletevid = function(id){
+    secondaryService.deletevideos(id).then(function(res){
+      $window.location.reload();
     })
   }
 }]);

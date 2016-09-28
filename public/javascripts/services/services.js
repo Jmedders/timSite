@@ -26,6 +26,11 @@ app.factory('secondaryService', function($http, $location){
     },
     getvideos: function() {
       return $http.get('/grabvideos')
+    },
+    deletevideos: function(id) {
+      var deletion = {};
+      deletion.id = id;
+      return $http.post('/deletevideos', deletion)
     }
   }
 })
