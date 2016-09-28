@@ -51,6 +51,7 @@ function($scope, TimeService, $location, $http, $window, $route) {
       if(res.data.errors){
         $scope.view.error = res.data.errors
       } else {
+        console.log(res.data.data);
         $location.path('/writing');
         $window.location.reload();
       }

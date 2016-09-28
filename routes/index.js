@@ -15,7 +15,15 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/blogging', function(req,res,next){
-  console.log(req.body);
+  if(!req.body.text){
+    res.json({errors: 'must submit text to post a new blog'})
+  }
+  knex('blogs').insert({
+    postdate: req.body.date,
+    post: req.body.text
+  }).then(function(data){
+    res.json({data: 'submitted'})
+  })
 })
 router.post('/login', function(req, res, next){
   console.log(req.body);
