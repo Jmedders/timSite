@@ -32,7 +32,7 @@ app.config(function($routeProvider, $httpProvider){
       controller: 'timController',
       resolve: {
         check: function($location, $rootScope, $route){
-            if($rootScope.user.id == 1){
+            if($rootScope.user && $rootScope.user.id == 1){
                 console.log('you are good');//Do something
             }else{
                 $location.path('/');    //redirect user to home.
@@ -46,7 +46,7 @@ app.config(function($routeProvider, $httpProvider){
       controller: 'timController',
       resolve: {
         check: function($location, $rootScope, $route){
-            if($rootScope.user.id == 1){
+            if($rootScope.user && $rootScope.user.id == 1){
                 console.log('you are good');//Do something
             }else{
                 $location.path('/');    //redirect user to home.
