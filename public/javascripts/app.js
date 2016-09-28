@@ -41,6 +41,20 @@ app.config(function($routeProvider, $httpProvider){
         }
       }
     })
+    .when('/addvideos', {
+      templateUrl: 'partials/addvideos.html',
+      controller: 'timController',
+      resolve: {
+        check: function($location, $rootScope, $route){
+            if($rootScope.user.id == 1){
+                console.log('you are good');//Do something
+            }else{
+                $location.path('/');    //redirect user to home.
+                console.log("Nice try");
+            }
+        }
+      }
+    })
 });
 
 app.run(function($rootScope, $location) {

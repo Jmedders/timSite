@@ -63,7 +63,6 @@ function($scope, TimeService, $location, $http, $window, $route) {
 app.controller('secondaryController', ['$scope', 'secondaryService', '$location', '$http',
 function($scope, secondaryService, $location, $http){
   $scope.view = {};
-  $scope.view.video = "https://www.youtube.com/embed/wzNfxbBUoto"
   $scope.fiction = 'Short stories';
   if($location.path() == '/writing'){
     secondaryService.getblogs().then(function (res) {

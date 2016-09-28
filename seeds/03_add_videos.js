@@ -7,13 +7,13 @@ exports.seed = function(knex, Promise) {
         videoSuffix: 'wzNfxbBUoto'
     }),
     knex('videos').insert({
-        videoSuffix: '1BRWF0iuFnQ'
+        videoSuffix: 'MdffsSFRtI8'
+    }),
+    knex('videos').insert({
+        videoSuffix: 'gNIwI8iE6bY'
     }),
     knex('videos').insert({
         videoSuffix: 'Fv7y_2o_3z0',
-    }),
-    knex('videos').insert({
-        videoSuffix: 'MdffsSFRtI8'
     })
   );
 };

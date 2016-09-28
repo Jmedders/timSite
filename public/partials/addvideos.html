@@ -1,0 +1,14 @@
+<h1 class="subheader">Submit A New Video</h1>
+<br><br>
+<div class="addpads" id ="blogdiv">
+  <br>
+  <form class="addpads" ng-submit="view.submitVideo()" name="submitVid">
+    <input type="text" ng-model="view.suffixurl" placeholder="suffix of youtube url"></input>
+    <br>
+    <input type="submit" id="logInSubmit">
+    <h5 class="logInError">{{view.error}}</h5>
+  </form>
+</div>
+<div id="blogpreview">
+  <h3>https://www.youtube.com/embed/{{view.suffixurl}}</h3>
+</div>
