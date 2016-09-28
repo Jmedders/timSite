@@ -19,6 +19,17 @@ router.get('/grabposts', function(req,res,next){
     res.json(data)
   })
 })
+router.get('/grabvideos', function(req,res,next){
+  var videoArr = [];
+  var videourl = "https://www.youtube.com/embed/"
+  knex('videos').orderBy('id', 'desc').then(function(data){
+    for (var i = 0; i < data.length; i++) {
+      var fullurl = videourl + data[i].videoSuffix;
+      videoArr.push(fullurl);
+    }
+    res.json(videoArr);
+  })
+})
 router.post('/blogging', function(req,res,next){
   if(!req.body.text){
     res.json({errors: 'must submit text to post a new blog'})

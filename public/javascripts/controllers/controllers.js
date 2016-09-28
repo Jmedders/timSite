@@ -6,7 +6,6 @@ function($scope, TimeService, $location, $http, $window, $route) {
   $scope.view.adultColour = false;
   $scope.view.ridgelings = false;
   $scope.view.solo = false;
-  $scope.view.video = "https://www.youtube.com/embed/wzNfxbBUoto"
   $scope.view.logIn = function() {
     TimeService.logIn($scope.view.username, $scope.view.password).then(function (res) {
       if(res.data.errors){
@@ -64,11 +63,18 @@ function($scope, TimeService, $location, $http, $window, $route) {
 app.controller('secondaryController', ['$scope', 'secondaryService', '$location', '$http',
 function($scope, secondaryService, $location, $http){
   $scope.view = {};
+  $scope.view.video = "https://www.youtube.com/embed/wzNfxbBUoto"
   $scope.fiction = 'Short stories';
-  if($location.path('/writing')){
+  if($location.path() == '/writing'){
     secondaryService.getblogs().then(function (res) {
       console.log(res.data);
       $scope.view.blogpostsinfo = res.data;
+    })
+  }
+  if($location.path() == '/videos'){
+    secondaryService.getvideos().then(function (res) {
+      console.log(res.data);
+      $scope.view.videourls = res.data;
     })
   }
 }]);

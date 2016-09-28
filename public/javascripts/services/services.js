@@ -19,6 +19,9 @@ app.factory('secondaryService', function($http, $location){
   return{
     getblogs: function() {
       return $http.get('/grabposts')
+    },
+    getvideos: function() {
+      return $http.get('/grabvideos')
     }
   }
 })
