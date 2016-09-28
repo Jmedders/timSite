@@ -2,9 +2,11 @@ app.controller('timController', ['$scope', 'TimeService', '$location', '$http', 
 function($scope, TimeService, $location, $http, $window, $route) {
   $scope.view = {};
   $scope.view.name = "Jeff";
+  $scope.view.world = 'hi'
   $scope.view.adultColour = false;
   $scope.view.ridgelings = false;
   $scope.view.solo = false;
+  $scope.view.video = "https://www.youtube.com/embed/wzNfxbBUoto"
   $scope.view.logIn = function() {
     TimeService.logIn($scope.view.username, $scope.view.password).then(function (res) {
       if(res.data.errors){
