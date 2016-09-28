@@ -16,7 +16,6 @@ router.get('/', function(req, res, next) {
 
 router.get('/grabposts', function(req,res,next){
   knex('blogs').orderBy('id', 'desc').then(function(data){
-    console.log(data);
     res.json(data)
   })
 })
