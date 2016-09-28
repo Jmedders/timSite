@@ -12,6 +12,11 @@ app.factory('TimeService', function($http, $location){
       blog.text = text;
       blog.date = date;
       return $http.post('/blogging', blog)
+    },
+    addVideo: function(url){
+      var video = {};
+      video.fullurl = url;
+      return $http.post('/addvideo', video)
     }
   }
 });

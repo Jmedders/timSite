@@ -46,6 +46,18 @@ function($scope, TimeService, $location, $http, $window, $route) {
     $window.location.reload();
   }
 
+  $scope.view.submitVideo = function(){
+    console.log('hi im going into service');
+    TimeService.addVideo($scope.view.suffixurl).then(function(res){
+      console.log('im coming back from service');
+      if(res.data.errors){
+        $scope.view.error = res.data.errors;
+      } else {
+        $location.path('/videos');
+        $window.location.reload();
+      }
+    })
+  }
   $scope.view.submitPost = function(){
     $scope.view.date = new Date();
     TimeService.submitblog($scope.view.text, $scope.view.date).then(function(res){

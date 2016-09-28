@@ -30,6 +30,20 @@ router.get('/grabvideos', function(req,res,next){
     res.json(videoArr);
   })
 })
+router.post('/addvideo', function(req,res,next){
+  if(!req.body.fullurl){
+    res.json({errors: 'must submit suffix for url'})
+  }
+  console.log('past if', req.body.fullurl);
+  knex('videos').insert({
+    videoSuffix: req.body.fullurl
+  }).then(function(data){
+    console.log('i inserted ');
+    res.json({data: 'submitted'})
+  }).catch(function(err){
+    res.json({errors: 'that was strange, try again'})
+  })
+})
 router.post('/blogging', function(req,res,next){
   if(!req.body.text){
     res.json({errors: 'must submit text to post a new blog'})
