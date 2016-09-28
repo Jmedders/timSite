@@ -35,11 +35,9 @@ router.post('/addvideo', function(req,res,next){
     res.json({errors: 'must submit suffix for url'})
   }
   else {
-    console.log('past if', req.body.fullurl);
     knex('videos').insert({
       videoSuffix: req.body.fullurl
     }).then(function(data){
-      console.log('i inserted ');
       res.json({data: 'submitted'})
     }).catch(function(err){
       res.json({errors: 'that was strange, try again'})

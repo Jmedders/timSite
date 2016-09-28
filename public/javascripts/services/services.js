@@ -4,7 +4,6 @@ app.factory('TimeService', function($http, $location){
       var user = {};
       user.username = username;
       user.password = password;
-      console.log(user);
       return $http.post('/login', user)
     },
     submitblog: function(text, date){
@@ -34,7 +33,6 @@ app.factory('secondaryService', function($http, $location){
 app.service("timInterceptor", function timInterceptor() {
   return {
     request: function(config){
-      // console.log(localStorage.jwt);
       if (localStorage.jwt) {
         config.headers.Authorization = 'Bearer ' + localStorage.jwt;
       }

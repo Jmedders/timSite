@@ -47,9 +47,7 @@ function($scope, TimeService, $location, $http, $window, $route) {
   }
 
   $scope.view.submitVideo = function(){
-    console.log('hi im going into service');
     TimeService.addVideo($scope.view.suffixurl).then(function(res){
-      console.log('im coming back from service');
       if(res.data.errors){
         $scope.view.error = res.data.errors;
       } else {
@@ -78,13 +76,11 @@ function($scope, secondaryService, $location, $http){
   $scope.fiction = 'Short stories';
   if($location.path() == '/writing'){
     secondaryService.getblogs().then(function (res) {
-      console.log(res.data);
       $scope.view.blogpostsinfo = res.data;
     })
   }
   if($location.path() == '/videos'){
     secondaryService.getvideos().then(function (res) {
-      console.log(res.data);
       $scope.view.videourls = res.data;
     })
   }
