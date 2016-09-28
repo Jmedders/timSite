@@ -31,31 +31,34 @@ router.get('/grabvideos', function(req,res,next){
   })
 })
 router.post('/addvideo', function(req,res,next){
-  if(!req.body.fullurl){
+  if(typeof req.body.fullurl == 'undefined'){
     res.json({errors: 'must submit suffix for url'})
   }
-  console.log('past if', req.body.fullurl);
-  knex('videos').insert({
-    videoSuffix: req.body.fullurl
-  }).then(function(data){
-    console.log('i inserted ');
-    res.json({data: 'submitted'})
-  }).catch(function(err){
-    res.json({errors: 'that was strange, try again'})
-  })
+  else {
+    console.log('past if', req.body.fullurl);
+    knex('videos').insert({
+      videoSuffix: req.body.fullurl
+    }).then(function(data){
+      console.log('i inserted ');
+      res.json({data: 'submitted'})
+    }).catch(function(err){
+      res.json({errors: 'that was strange, try again'})
+    })
+  }
 })
 router.post('/blogging', function(req,res,next){
-  if(!req.body.text){
+  if(typeof req.body.text == 'undefined'){
     res.json({errors: 'must submit text to post a new blog'})
+  } else {
+    knex('blogs').insert({
+      postdate: req.body.date,
+      post: req.body.text
+    }).then(function(data){
+      res.json({data: 'submitted'})
+    }).catch(function(err){
+      res.json({errors: 'that was strange, try again'})
+    })
   }
-  knex('blogs').insert({
-    postdate: req.body.date,
-    post: req.body.text
-  }).then(function(data){
-    res.json({data: 'submitted'})
-  }).catch(function(err){
-    res.json({errors: 'that was strange, try again'})
-  })
 })
 router.post('/login', function(req, res, next){
   knex('users')
