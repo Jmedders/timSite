@@ -14,6 +14,12 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/grabposts', function(req,res,next){
+  knex('blogs').then(function(data){
+    console.log(data);
+    res.json(data)
+  })
+})
 router.post('/blogging', function(req,res,next){
   if(!req.body.text){
     res.json({errors: 'must submit text to post a new blog'})
@@ -37,7 +43,7 @@ router.post('/login', function(req, res, next){
     if(!data){
       res.json({errors: 'username or password is incorrect'})
     } else if(bcrypt.compareSync(req.body.password, data.password)){
-      token = jwt.sign({id: data.id, usernautme: data.username, is_admin: data.is_admin}, process.env.SECRET);
+      token = jwt.sign({id: data.id, username: data.username, is_admin: data.is_admin}, process.env.SECRET);
       res.json({token:token});
     } else {
       res.json({errors: 'username or password is incorrect'})

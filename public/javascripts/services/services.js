@@ -15,6 +15,13 @@ app.factory('TimeService', function($http, $location){
     }
   }
 });
+app.factory('secondaryService', function($http, $location){
+  return{
+    getblogs: function() {
+      return $http.get('/grabposts')
+    }
+  }
+})
 
 app.service("timInterceptor", function timInterceptor() {
   return {

@@ -50,7 +50,7 @@ function($scope, TimeService, $location, $http, $window, $route) {
     TimeService.submitblog($scope.view.text, $scope.view.date).then(function(res){
       if(res.data.errors){
         $scope.view.error = res.data.errors
-      } else {        
+      } else {
         $location.path('/writing');
         $window.location.reload();
       }
@@ -59,7 +59,14 @@ function($scope, TimeService, $location, $http, $window, $route) {
 
 }]);
 
-app.controller('secondaryController', ['$scope', '$http',
-function($scope, $http){
-  $scope.fiction = 'Short stories'
+app.controller('secondaryController', ['$scope', 'secondaryService', '$location', '$http',
+function($scope, secondaryService, $location, $http){
+  $scope.view = {};
+  $scope.fiction = 'Short stories';
+  if($location.path('/writing')){
+    secondaryService.getblogs().then(function (res) {
+      console.log(res.data);
+      $scope.view.blogpostsinfo = res.data;
+    })
+  }
 }]);
