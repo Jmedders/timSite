@@ -1,10 +1,31 @@
-<h4 class="addpads" >I've created a number of music projects throughout the years. I draw inspiration from
-a lot of different genres and that's evidenced in the music you can find below.</h4>
-
-<h1 class="addpads" ng-click="view.showAdultColour()">Adult Colour</h1>
-<h4 class="addpads"  ng-show="view.adultColour">Formed in 2015, Adult Colour is my venture into alternative rock. Influenced by bands like NEU, Wire, Galaxie 500. I sing, write, and play on the guitar.</h4>
-<h1 class="addpads"  ng-click="view.showRidgelings()">Ridgelings</h1>
-<h4 class="addpads"  ng-show="view.ridgelings">After I moved to Boulder, I met some friends who were into folk music. We played quite a few shows and released a full-length album that you can purchase here: </h4>
-<img class="addpads"  id="ridgelingsPic" ng-show="view.ridgelings" ng-src="https://f4.bcbits.com/img/0003258167_10.jpg" alt="Ridgelings Image">
-<h1 class="addpads"  ng-click="view.showSolo()">Solo Works</h1>
-<h4 class="addpads"  ng-show="view.solo">I've been putting out solo work for over 7 years now. It's mostly folk, singer-songwriter style. You can check out my bandcamp here: </h4>
+<div class="centermusic">
+  <h2 class="discogcenters">I've created a number of music projects throughout the years. I draw inspiration from a lot of different genres and that's evidenced in the music you can find below.</h2>
+  <h1 class="discogcenters" ng-click="view.showAdultColour()">Adult Colour</h1>
+  <h3 class="discogcenters"  ng-show="view.adultColour">Formed in 2015, Adult Colour is my venture into alternative rock. Influenced by bands like NEU, Wire, Galaxie 500. I sing, write, and play on the guitar.</h3>
+  <a ng-show="view.adultColour" ng-href="https://www.soundcloud.com/adult-colour">
+    <span class="fa fa-soundcloud" aria-hidden="true"> Soundcloud </span>
+  </a>
+  <a ng-show="view.adultColour" ng-href="https://adultcolour.bandcamp.com/">
+    <span class="fa fa-music" aria-hidden="true"> Bandcamp </span>
+  </a>
+  <h1 class="discogcenters"  ng-click="view.showRidgelings()">Ridgelings</h1>
+  <img class="discogcenters"  id="ridgelingsPic" ng-show="view.ridgelings" ng-src="https://f4.bcbits.com/img/0003258167_10.jpg" alt="Ridgelings Image">
+  <h3 class="discogcenters"  ng-show="view.ridgelings">After I moved to Boulder, I met some friends who were into folk music. We played quite a few shows and released a full-length album that you can purchase here: </h3>
+  <a ng-show="view.ridgelings" ng-href="https://theridgelings.bandcamp.com/">
+    <span class="fa fa-music" aria-hidden="true"> Bandcamp </span>
+  </a>
+  <a ng-show="view.ridgelings" ng-href="https://www.youtube.com/user/theRidgelings/videos">
+    <span class="fa fa-youtube-square" aria-hidden="true"> YouTube </span>
+  </a>
+  <h1 class="discogcenters"  ng-click="view.showSolo()">Solo Works</h1>
+  <h3 class="discogcenters"  ng-show="view.solo">I've been putting out solo work for over 7 years now. It's mostly folk, singer-songwriter style. You can check out my bandcamp here: </h3>
+  <a ng-show="view.solo" ng-href="https://timnovak.bandcamp.com/">
+    <span class="fa fa-music" aria-hidden="true"> Bandcamp </span>
+  </a>
+  <a ng-show="view.solo" ng-href="https://open.spotify.com/artist/3LeCRoBrQM4a6sN4Xp48LG">
+    <span class="fa fa-spotify" aria-hidden="true"> Spotify </span>
+  </a>
+  <a ng-show="view.solo" ng-href="https://www.youtube.com/user/teanovak">
+    <span class="fa fa-youtube-square" aria-hidden="true"> YouTube </span>
+  </a>
+</div>
