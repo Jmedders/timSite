@@ -16,14 +16,19 @@ app.factory('TimeService', function($http, $location){
       var video = {};
       video.fullurl = url;
       return $http.post('/addvideo', video)
+    },
+    editblog: function(id) {
+      var editwords = {};
+      editwords.id = id;
+      return $http.post('/updatepost', deletion)
+    },
+    getblogs: function() {
+      return $http.get('/grabposts')
     }
   }
 });
 app.factory('secondaryService', function($http, $location){
   return{
-    getblogs: function() {
-      return $http.get('/grabposts')
-    },
     getvideos: function() {
       return $http.get('/grabvideos')
     },

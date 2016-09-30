@@ -67,26 +67,34 @@ function($scope, TimeService, $location, $http, $window, $route) {
       }
     })
   }
-
+  $scope.fiction = 'Short stories';
+  if($location.path() == '/writing'){
+    TimeService.getblogs().then(function (res) {
+      $scope.view.blogpostsinfo = res.data;
+    });
+  }
+  $scope.view.editblog = function(id, post){
+    $scope.view.text = post;
+    $location.path('/blog');
+    console.log($scope.view.text);
+    // TimeService.editblog(id, post).then(function(res){
+    //   $window.location.reload();
+    // });
+  }
 }]);
 
 app.controller('secondaryController', ['$scope', 'secondaryService', '$location', '$http', '$window',
 function($scope, secondaryService, $location, $http, $window){
   $scope.view = {};
-  $scope.fiction = 'Short stories';
-  if($location.path() == '/writing'){
-    secondaryService.getblogs().then(function (res) {
-      $scope.view.blogpostsinfo = res.data;
-    })
-  }
+
   if($location.path() == '/videos'){
     secondaryService.getvideos().then(function (res) {
       $scope.view.videourls = res.data;
-    })
+    });
   }
   $scope.view.deletevid = function(id){
     secondaryService.deletevideos(id).then(function(res){
       $window.location.reload();
-    })
+    });
   }
 }]);

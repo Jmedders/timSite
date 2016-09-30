@@ -1,5 +1,6 @@
 <h2 class="addpads">{{fiction}}</h2>
 <div ng-repeat="blog in view.blogpostsinfo">
   <h3 class="addpads">{{blog.postdate | date}}</h3>
+  <button ng-show="user.id == 1" ng-click="view.editblog(blog.id, blog.post)" class="blogbutton">Edit Post</button>
   <h4 class="addpads">{{blog.post}}</h4>
 </div>

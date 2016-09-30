@@ -1,8 +1,7 @@
 app.directive('writingDirective', function(){
   return {
     restrict: "E",
-    templateUrl: 'javascripts/directives/views/writingdirective.html',
-    controller: 'secondaryController'
+    templateUrl: 'javascripts/directives/views/writingdirective.html'
   }
 })
 app.directive('videoDirective', function(){
@@ -10,5 +9,11 @@ app.directive('videoDirective', function(){
     restrict: "E",
     templateUrl: 'javascripts/directives/views/videodirective.html',
     controller: 'secondaryController'
+  }
+})
+app.directive('editPost', function() {
+  return {
+    restrict: 'E',
+    templateUrl: 'javascripts/directives/views/popup-editblog.html'
   }
 })

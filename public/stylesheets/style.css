@@ -11,14 +11,17 @@ a {
   text-align: right; }
 
 .logout {
-  height: 6vh; }
+  height: 6vh;
+  background: white;
+  color: black; }
 
 #border {
   border-top: 3px groove gray;
   clear: both; }
 
 body {
-  background: darkgray; }
+  background: #0A0A0A;
+  color: white; }
 
 img {
   width: 100vw; }
@@ -44,7 +47,7 @@ img {
   height: 70vh; }
 
 .addpads {
-  font-family: 'Cardo';
+  font-family: 'Cormorant Garamond';
   padding-left: 15px;
   padding-right: 15px;
   text-align: justify; }
@@ -66,5 +69,10 @@ img {
 
 .subheader {
   text-align: center; }
+
+.blogbutton {
+  background: white;
+  color: black;
+  margin-left: 15px; }
 
 /*# sourceMappingURL=style.css.map */

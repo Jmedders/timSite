@@ -40,6 +40,12 @@ router.post('/deletevideos', function(req,res,next){
     res.json({data: data});
   })
 })
+router.post('/updatepost', function(req,res,next){
+  console.log(req.body.id, 'about to disappear');
+  knex('videos').where('id', req.body.id).delete().then(function(data){
+    res.json({data: data});
+  })
+})
 
 router.post('/addvideo', function(req,res,next){
   if(typeof req.body.fullurl == 'undefined'){
