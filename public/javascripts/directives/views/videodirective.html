@@ -3,5 +3,5 @@
      ng-src="{{vid.fullurl | trustUrl}}" width="640" height="390" class="timVideos" frameborder="0" allowFullScreen>
   </iframe>
   <br><br>
-   <button ng-show="user" ng-click="view.deletevid(vid.id)">Delete ^</button>
+   <button ng-show="user" class="buttondelete" ng-click="view.deletevid(vid.id)">Delete ^</button>
 </div>
