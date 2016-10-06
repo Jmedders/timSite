@@ -91,8 +91,12 @@ img {
   background: black;
   color: white; }
 
-@media (max-width: 775px) {
+@media screen and (max-width: 775px) {
   .navigation {
     display: none; } }
+@media screen and (max-width: 775px) {
+  #tim .addpads {
+    text-align: center;
+    width: 100vw; } }
 
 /*# sourceMappingURL=style.css.map */
