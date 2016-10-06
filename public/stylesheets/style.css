@@ -91,4 +91,8 @@ img {
   background: black;
   color: white; }
 
+@media (max-width: 775px) {
+  .navigation {
+    display: none; } }
+
 /*# sourceMappingURL=style.css.map */
