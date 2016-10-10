@@ -99,6 +99,9 @@ img {
 #blackie {
   color: black; }
 
+#logInSubmit {
+  color: black; }
+
 @media screen and (max-width: 775px) {
   .navigation {
     display: none; } }
