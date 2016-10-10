@@ -15,6 +15,21 @@ app.config(function($routeProvider, $httpProvider){
       templateUrl: 'partials/landing.html',
       controller: 'timController'
     })
+    .when('/directory', {
+      templateUrl: 'partials/directory.html',
+      controller: 'timController'
+      // resolve: {
+      //   check: function($location, $rootScope, $route){
+      //     console.log($rootScope.user.admin);
+      //       if($rootScope.user.admin){
+      //           console.log('you are good');//Do something
+      //       }else{
+      //           $location.path('/');    //redirect user to home.
+      //           console.log("Nice try");
+      //       }
+      //   }
+      // }
+    })
     .when('/discography', {
       templateUrl: 'partials/discography.html',
       controller: 'timController'

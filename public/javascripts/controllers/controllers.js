@@ -13,7 +13,7 @@ function($scope, TimeService, $location, $http, $window, $route) {
       }
       else{
         localStorage.jwt = res.data.token;
-        $location.path('/landing');
+        $location.path('/directory');
         $window.location.reload();
       }
     });
