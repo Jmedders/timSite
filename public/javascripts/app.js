@@ -17,18 +17,17 @@ app.config(function($routeProvider, $httpProvider){
     })
     .when('/directory', {
       templateUrl: 'partials/directory.html',
-      controller: 'timController'
-      // resolve: {
-      //   check: function($location, $rootScope, $route){
-      //     console.log($rootScope.user.admin);
-      //       if($rootScope.user.admin){
-      //           console.log('you are good');//Do something
-      //       }else{
-      //           $location.path('/');    //redirect user to home.
-      //           console.log("Nice try");
-      //       }
-      //   }
-      // }
+      controller: 'timController',
+      resolve: {
+        check: function($location, $rootScope){
+            if($rootScope.user.is_admin && $rootScope.user.id == 1){
+                console.log('you are good');//Do something
+            }else{
+                $location.path('/');    //redirect user to home.
+                console.log("Nice try");
+            }
+        }
+      }
     })
     .when('/discography', {
       templateUrl: 'partials/discography.html',
@@ -46,7 +45,7 @@ app.config(function($routeProvider, $httpProvider){
       templateUrl: 'partials/blog.html',
       controller: 'timController',
       resolve: {
-        check: function($location, $rootScope, $route){
+        check: function($location, $rootScope ){
             if($rootScope.user && $rootScope.user.id == 1){
                 console.log('you are good');//Do something
             }else{
@@ -60,7 +59,7 @@ app.config(function($routeProvider, $httpProvider){
       templateUrl: 'partials/addvideos.html',
       controller: 'timController',
       resolve: {
-        check: function($location, $rootScope, $route){
+        check: function($location, $rootScope){
             if($rootScope.user && $rootScope.user.id == 1){
                 console.log('you are good');//Do something
             }else{
